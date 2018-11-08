@@ -26,9 +26,15 @@ File Group is an Logical Container for Data Files. It can contain multiple Data 
 
 Data stored in to Pages by SQL Server.
 
+1 Byte = b Bits
 1 KB = 1024 Bytes
 8 KB = 1 Page
 8 Continuos pages = 1 Extent
+
+/*
+It is important to know that bytes are abbreviated with a capital B, where as bits use a lowercase b. 
+Therefore, Mbps is megabits per second, and MBps is megabytes per second. So 8Mbps is equal to 1MBps.
+*/
 
 Note: If multiple data files are present in File Group, SQL Server allocates pages for data in all Data Files based on Round Robin Mechanism.
 
