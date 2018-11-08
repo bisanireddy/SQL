@@ -4,3 +4,4 @@ SQL Server Performance Improvemence Factors:
 
 2. Table partitioning will improve the permformance.
 
+Ref link : https://www.cathrinewilhelmsen.net/2015/04/12/table-partitioning-in-sql-server/
