@@ -1,0 +1,66 @@
+SQL Server will use two types of operating system files
+Data Files and Log Files
+Data Files = .MDF
+Log Files = .LDF
+
+- Data Files can be two Types 
+
+1. Primary Data Files
+2. Secondary Data Files
+
+-- Primary Data file is mandatory for any SQL Server Database
+Reference :
+
+he Primary data file contains startup information for the database and points to other files in the database. 
+User data and objects can be stored in this file and every database has one primary data file
+
+Secondary Data File is optional and it is used to spread the data across the multiple disks.
+
+SQL Server can have multiple Data and Log files but only one Primary Data File
+
+Above to these files, there is File Groups in which Data files and Log files are mapped to.
+
+File Group is an Logical Container for Data Files. It can contain multiple Data Files.
+
+
+
+Data stored in to Pages by SQL Server.
+
+1 KB = 1024 Bytes
+8 KB = 1 Page
+8 Continuos pages = 1 Extent
+
+Note: If multiple data files are present in File Group, SQL Server allocates pages for data in all Data Files based on Round Robin Mechanism.
+
+SQL Server also used proportion Fill algorithm to fill all the data files in sync and ensuring the data in all files reaches 100% at same time.
+
+--To see the extents used 
+
+DBCC showfilestats
+
+--To see the space occupied 
+
+Select DB_NAME() AS [DatabaseName], Name, file_id, physical_name,
+    (size * 8.0/1024) as Size,
+    ((size * 8.0/1024) - (FILEPROPERTY(name, 'SpaceUsed') * 8.0/1024)) As FreeSpace
+    From sys.database_files
+    
+  Note: Primary Data will have by default more extents used though no object is created yet. Because it contains user information and Startup Information.
+  
+  
+  
+Note:  GO 10000  specifying any number after GO command is running the batch command for number of times.
+
+
+-- to see where the data is stored on file or pages in a table.
+
+DBCC IND ('Manvendra', 'Test_data1', -1);
+
+DBCC IND ('DB NAME', 'TABLE NAME', -1);
+
+Note: Whenever we insert the data in to table, if there are secondary data files, the data is soted in secondary data files is equal. this is because of Proportion Fill algorithm.
+
+Reference Link :
+
+https://www.mssqltips.com/sqlservertip/4345/understanding-how-sql-server-stores-data-in-data-files/
+
