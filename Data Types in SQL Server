@@ -1,1 +1,17 @@
 
+The SQL Data Types reference sheet
+The columns named 8, 9, 10 and 11 indicates SQL Server version data type support where
+
+8 = SQL Server 2000
+9 = SQL Server 2005
+10 = SQL Server 2008
+11 = SQL Server 2012
+
+
+
+
+
+Reference Link :
+
+https://www.connectionstrings.com/sql-server-data-types-reference/
+
