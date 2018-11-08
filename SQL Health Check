@@ -1,0 +1,14 @@
+During a SQL Server Health Check we can check the following areas of SQL Server:
+
+Hardware (Storage, CPU, Memory) Configuration
+Virtualization Layer
+Operating System Settings
+SQL Server Instance Configuration Settings
+Database Configuration Settings
+Index Optimizations
+Locking & Blocking Optimizations
+TempDb Configuration
+Database Maintenance
+Backup Strategy
+Disaster Recovery Plans
+High Availability Strategy
