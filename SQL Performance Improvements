@@ -1,0 +1,4 @@
+SQL Server Performance Improvemence Factors:
+
+1. Lowering the number of page reads for any SQL Server reading qeury will improve the performance.
+
