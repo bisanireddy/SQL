@@ -96,3 +96,19 @@ If database object defined in way it occupies 4031 Bytes, then 4029 Bytes are wa
 
 
 Note: If a VARCHAR is defined in table definition, then these columns are stored on a different page.
+
+
+
+
+Space Wasted on Object Level :
+
+sys.dm_os_buffer_descriptors
+
+SELECT
+   DB_NAME(database_id), 
+   SUM(free_space_in_bytes) / 1024 AS 'Free_KB'
+FROM sys.dm_os_buffer_descriptors
+WHERE database_id <> 32767
+GROUP BY database_id
+ORDER BY SUM(free_space_in_bytes) DESC
+GO
