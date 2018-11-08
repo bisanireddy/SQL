@@ -56,3 +56,43 @@ Most Imp:
  
  https://www.sqlpassion.at/archive/2016/08/22/data-pages-the-foundation-of-sql-server/
  
+ 
+ Data pages are always belongs to one Database object and cannot be shared among two or more objects.
+ 
+ Example.
+ 
+ CREATE TABLE Customers
+(
+   FirstName CHAR(50) NOT NULL,
+   LastName CHAR(50) NOT NULL,
+   Address CHAR(100) NOT NULL,
+   ZipCode CHAR(5) NOT NULL,
+   Rating INT NOT NULL,
+   ModifiedDate DATETIME NOT NULL,
+)
+GO
+
+
+CHAR = Allocated Size
+INT = 4
+DATETIME = 8
+
+Total space for an row for the above table.
+
+ The size of a record is here 224 bytes long (50 + 50 + 100 + 5 + 4 + 8 + 7).   
+ Note: 7 bytes of over head for each row must be calculated.
+ 
+ total space for payload = 8096
+one row space = 224
+
+total rows = 8096/224 = 36.14 = 36 rows
+
+Space remaining = 8096 - 36*224 = 32 Bytes - This space is wasted and is not used.
+
+
+Another Example:
+
+If database object defined in way it occupies 4031 Bytes, then 4029 Bytes are wasted.
+
+
+Note: If a VARCHAR is defined in table definition, then these columns are stored on a different page.
