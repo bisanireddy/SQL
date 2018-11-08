@@ -31,6 +31,12 @@ Data stored in to Pages by SQL Server.
 8 KB = 1 Page
 8 Continuos pages = 1 Extent
 
+Two types of Extents:
+
+1. Mixed Extent
+2. Uniform Extent
+
+
 /*
 It is important to know that bytes are abbreviated with a capital B, where as bits use a lowercase b. 
 Therefore, Mbps is megabits per second, and MBps is megabytes per second. So 8Mbps is equal to 1MBps.
