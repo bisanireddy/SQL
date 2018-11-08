@@ -18,3 +18,17 @@ Page Header
 Payload
 Row Offset Array
 
+Page Size = 8KB
+8KB = 8192 Bytes
+
+Page Header:
+The page header is always 96 Bytes long in SQL Server (independent of the type of the page), 
+and stores general information like the Page ID, Object ID, etc.
+
+Note: Page header uses 96 Bytes of 8192 Bytes and it is fixed.
+
+PayLoad:
+Most important and interesting area as our data stores in this area.
+
+Note: Payload will have 8096 Bytes allocated by SQL Server for data storing.
+
