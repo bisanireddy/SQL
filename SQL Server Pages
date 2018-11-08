@@ -112,3 +112,6 @@ WHERE database_id <> 32767
 GROUP BY database_id
 ORDER BY SUM(free_space_in_bytes) DESC
 GO
+
+Refernce Link:
+https://www.sqlpassion.at/archive/2016/08/22/data-pages-the-foundation-of-sql-server/
