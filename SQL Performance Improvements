@@ -2,3 +2,5 @@ SQL Server Performance Improvemence Factors:
 
 1. Lowering the number of page reads for any SQL Server reading qeury will improve the performance.
 
+2. Table partitioning will improve the permformance.
+
