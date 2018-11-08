@@ -17,3 +17,11 @@ GAM – Global Allocation Map – tracks if extent are available for allocation 
 SGAM – Shared Global Allocation Map – tracks if extents are mixed extent and have at least one data page available for use.
 IAM – Index Allocation Map – tracks if extents are used by specific table/index.
  
+There are another special page type like PFS – Page Free Space
+
+PFS – Page Free Space – tracks approximate amount of the free space in the page, as well as a few other things. One PFS page covers 8,088 pages or about 64Mb of data.
+
+
+Reference:
+
+https://aboutsqlserver.com/2010/08/11/how-sql-server-stores-data-extents-data-pages-data-row-for-in-row-data/
