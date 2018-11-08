@@ -32,3 +32,27 @@ Most important and interesting area as our data stores in this area.
 
 Note: Payload will have 8096 Bytes allocated by SQL Server for data storing.
 
+
+
+Most Imp:
+
+ SQL Server isn’t able to read a part of a page from your storage, or write part of a page out to your storage.
+ I/O operations are always done (at least) on a page level.
+ 
+ So, all the WRITE Operations should be in a single shot and Read operations in single shot. 
+ 
+ So, GOAL should be always to use the page as much as possible to write the data in to a single page.
+ 
+ Row Offset Array:
+ 
+ It stores 2 Bytes for every record on the page with a pointer where the record is located on the page.
+ 
+ 
+ 
+ ----- for each page there is an internal over head of 7 at least.
+ 
+ 
+ Reference :
+ 
+ https://www.sqlpassion.at/archive/2016/08/22/data-pages-the-foundation-of-sql-server/
+ 
