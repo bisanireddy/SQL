@@ -1,5 +1,11 @@
 This section explains the structure of Page used in SQL Server whill will help you to understand the data writing.
 
+Extents:
+1. Mixed
+2. Uniform extent
+
+Note:For any Database, first 8 pages are mixed extent and then Uniform Extents are used.
+
 There are different types of pages in SQL Server.
 
 1. Data Page
