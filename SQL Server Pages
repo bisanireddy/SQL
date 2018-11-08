@@ -1,0 +1,20 @@
+This section explains the structure of Page used in SQL Server whill will help you to understand the data writing.
+
+There are different types of pages in SQL Server.
+
+1. Data Page
+2. Index Page
+3. System Page
+etc.
+
+All pages are always with fixed size of 8KB.
+
+Lets focus on Data Page
+Data Page:
+
+A data page always consists of 3 parts:
+
+Page Header
+Payload
+Row Offset Array
+
