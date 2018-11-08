@@ -1,0 +1,19 @@
+There are 2 types of extents – mixed extent which stores data pages belong to the different objects and uniform extent which stores data pages belong to the one object. 
+
+ First 8 pages for the objects are stored in the mixed extents, after that only uniform extents are used. 
+ 
+ All space allocation  is done based on extents – 64K blocks regardless of the type (mixed or uniform).
+ 
+ 
+ There are some Special Data pages using to track extents allocation. 
+ 
+ These pages are basically bitmaps.
+
+every bit handles one extent. So one page can cover 64,000 extents or almost 4Gb of data.
+
+Let’s take a quick look at them:
+
+GAM – Global Allocation Map – tracks if extent are available for allocation or already in use.
+SGAM – Shared Global Allocation Map – tracks if extents are mixed extent and have at least one data page available for use.
+IAM – Index Allocation Map – tracks if extents are used by specific table/index.
+ 
